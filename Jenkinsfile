@@ -1,21 +1,15 @@
-@Library('shared-library-new') _
-
+@Library('jenkins-library-new@main') _
+ 
 pipeline {
-  agent any 
-		tools {
-		jdk 'JAVA'
-		git 'Default'
-	}
+    agent any
     stages {
-	
-stage('Git Checkout') {
-	steps{
-    codecheckout(
-        branch: "main",
-        url: "https://github.com/iambasil13/cts-apprepo.git"
-    )
-	}
+        stage('Git Checkout') {
+            steps {
+            codecheckout(
+                branch: "main",
+                url: "https://github.com/iambasil13/cts-apprepo.git"
+            )
+            }
+    }
+    }
 }
-		}
-		
-	}
