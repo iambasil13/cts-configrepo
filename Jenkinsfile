@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-            codecheckout(
+            stepcodecheckout(
                 branch: "main",
                 url: "https://github.com/iambasil13/cts-apprepo.git"
             )
