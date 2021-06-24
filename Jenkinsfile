@@ -8,23 +8,12 @@ pipeline {
 	}
     stages {
 	
-		stage('Checkout') {
-			steps {
-			 git(
-				branch: "main",
-				url: "https://github.com/iambasil13/cts-usecase.git"
-				)
-			}
+stage('Git Checkout') {
+    codecheckout(
+        branch: "main",
+        url: "https://github.com/iambasil13/cts-apprepo.git"
+    )
+}
 		}
 		
-		stage('Analyze&Report') {
-			steps {
-			 //Test()
-			InputCSV()
-			//CSVrun()
-			}
-		}	
-		
 	}
-	
-}
